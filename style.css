@@ -1,0 +1,162 @@
+/* 🔹 Background Image (First one you chose) */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #064d46, #203e97, #085746);;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 🔹 Overlay for Soft Blur */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right,
+    rgba(44, 62, 80, 0.4),
+    rgba(52, 73, 94, 0.4));
+  z-index: -1;
+}
+
+/* 🔹 Container */
+.contact-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+/* 🔹 Glassmorphism Form with Animation */
+.contact-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* 🔹 Logo Circle */
+.logo-circle {
+  background: rgba(255, 255, 255, 0.2);
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 2px 2px 6px rgba(255,255,255,0.3),
+              inset -2px -2px 6px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 🔹 Headings */
+.contact-form h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.contact-form p {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+
+/* 🔹 Input Fields */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ddd;
+}
+
+textarea {
+  resize: none;
+}
+
+/* 🔹 Submit Button */
+.contact-form button {
+  padding: 12px;
+  background: #00b8b8;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.contact-form button:hover {
+  background: #009999;
+  transform: scale(1.03);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 20px;
+  }
+}
+
+/* 🔹 Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.success-message {
+  display: none;
+  background-color: #0bb77e;
+  color: #fff;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Smooth fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
